@@ -1,9 +1,9 @@
 # Django Live Project
 
 ### Introduction
-Working on a two week sprint has really shown me the workflow, as well as the proper techniques professional developers use to create Web Applications using Python(my personal favorite language, don’t tell the other languages) and the Django framework. As I moved forward through the sprint the short two weeks has really shown me how to work as a team and help out teammates, as well as being able to ask questions with confidence and understand the answers you receive. Doing Full stack development I really took advantage of this project to understand the connection between [front-end](#Front-End-Stories) and [back-end](#Back-End-Stories) development, as well as best Practices between the two.
+Working on a two week sprint has really shown me the workflow, as well as the proper techniques professional developers use to create Web Applications using Python (my personal favorite language, don’t tell the other languages) and the Django framework. As I moved forward through the sprint, the short two weeks has really shown me how to work as a team and help out teammates, as well as being able to ask questions with confidence and understand the answers you receive. Doing Full Stack development I really took advantage of this project to understand the connection between [front-end](#Front-End-Stories) and [back-end](#Back-End-Stories) development, as well as best practices between the two.
 
-Below are some examples of the type of work and a few problems and how I choose to resolve them. This does not include the whole project but instead show snippets of my code, and include descriptions of bugs I solved along the way.
+Below are some examples of the type of work and a few problems and how I choose to resolve them. This does not include the whole project but instead shows snippets of my code, and include descriptions of bugs I solved along the way.
 
 ### Back-End Stories
 [Models](#Models)\
@@ -12,7 +12,7 @@ Below are some examples of the type of work and a few problems and how I choose 
 [Total Food](#Total-Food)
 
 #### Models
-Although we were required to have one table in our database for our projects I choose to utilize two tables to create a better and more personal experience logging both the daily exercises for the user along with the daily nutrition(e.g. fats, carbs, or protein). 
+Although we were required to have one table in our database for our projects, I choose to utilize two tables to create a better and more personal experience, logging both the daily exercises for the user along with the daily nutrition(e.g. fats, carbs, or protein). 
 
 ```
 date = datetime.datetime.now()
@@ -56,7 +56,7 @@ class Activity(models.Model):
 <hr>
 
 #### Forms
-This also allowed my to take advantage of Djangos ability to create forms and save the data receive from the API for recall of the daily nutrition for the user.
+This also allowed me to take advantage of Djangos ability to create forms and save the data received from the API for recall of the daily nutrition for the user.
 
 ```
 class ActivityForm(ModelForm):
@@ -73,7 +73,7 @@ class FoodForm(ModelForm):
 <hr>
 
 #### API Function
-For my API I chose [nutritionix.com](https://www.nutritionix.com/) which was a great experience working with an API that had slightly more strict requirements for the type of information sent in order to get a response.
+For my API I chose [nutritionix.com](https://www.nutritionix.com/), which was a great experience working with an API that had slightly more strict requirements for the type of information sent in order to get a response.
 
 ```
 def get_nutrition(food):
@@ -99,7 +99,7 @@ def get_nutrition(food):
 <hr>
 
 #### Total Food
-I also had to include a function to take all the food logged for that day only and adds up the nutrients and return the information to my main API function.
+I also had to include a function to take all the food logged for that day only, and add up the nutrients and return the information to my main API function.
 
 ```
 def get_food():
@@ -125,7 +125,7 @@ def get_food():
 <hr>
 
 ### Front-End Stories
-Front end design was pretty simple integrating my designs in the main CSS file without effecting other pages but still using the same basic template. The trick came in passing information into manually rendered forms and then saving that information to the database for later recall. Below is my HTML template for displaying an autofill form with the information from the API and then saving that data once an “Add Food” button is click. Also the “Add Food” button is only displayed once a food has been searched.
+Front end design was pretty simple integrating my designs in the main CSS file without effecting other pages, but still using the same basic template. The trick came in passing information into manually rendered forms and then saving that information to the database for later recall. Below is my HTML template for displaying an autofill form with the information from the API and then saving that data once an “Add Food” button is clicked. Also the “Add Food” button is only displayed once a food has been searched.
 
 ```
 <section>
@@ -207,7 +207,7 @@ Front end design was pretty simple integrating my designs in the main CSS file w
 <hr>
 
 ### Bugs/Learned
-As I mentioned above my API would only send a response if the body of my request was formatted correctly. Although I was sending the correct information to the API, the body of my request needed to be formatted as a JSON before the request was sent. This was simply solved with these few lines.
+As I mentioned above, my API would only send a response if the body of my request was formatted correctly. Although I was sending the correct information to the API, the body of my request needed to be formatted as a JSON before the request was sent. This was simply solved with these few lines.
 
 ```
 body = {
